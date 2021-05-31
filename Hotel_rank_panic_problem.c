@@ -1,4 +1,5 @@
-//Created by Jithin K C
+// Created by Jithin K C
+
 #include <stdio.h>
 
 //Function Declaration - Hotel_rank_panic_problem
@@ -103,9 +104,9 @@ int Hotel_rank_panic_problem(int n,int k,int Check_in[],int Check_out[])
         for (i = 0; i < n; ++i)
         {
             // Checking Whether Any new customer arrive befor previous customer check-out
-           if(a[i][1]>=a[i+1][0])
+           if(a[i][1]>=a[i+1][0] && a[i][1]!=0 && a[i+1][0]!=0)
            {   // Checking Whether Any Overlap between check-out Time of customers
-               if(a[i+1][1]>=a[i][1])
+               if(a[i+1][1]>=a[i][1] && a[i+1][1]!=0 && a[i][1]!=0)
                {
                    // Calculating Panic Time period
                    temp=a[i][1]-a[i+1][0];
@@ -124,6 +125,6 @@ int Hotel_rank_panic_problem(int n,int k,int Check_in[],int Check_out[])
            }
         }
          // Panic Time period
-        return s;
-    }
+       
+    } return s;
 }
